@@ -4,7 +4,13 @@
 }
 
 .login-btn {
-  background-color: orange;
+  background: rgb(255, 147, 30);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 147, 30, 1) 0%,
+    rgba(244, 175, 13, 0.8015581232492998) 35%,
+    rgba(255, 213, 0, 0.904) 100%
+  );
   border: none;
   width: 100%;
 }
