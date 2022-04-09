@@ -12,3 +12,16 @@ nav a {
 nav a:hover {
   color: orange !important;
 }
+
+.signout-btn {
+  background: transparent;
+  color: black;
+  border: none;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.signout-btn:hover {
+  color: orange;
+  background-color: transparent;
+}

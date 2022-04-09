@@ -1,9 +1,11 @@
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import useFirebase from "../../hooks/useFirebase";
 import "./Header.css";
 
 const Header = () => {
+  const { user, handleSignOut } = useFirebase();
   return (
     <div className="box-shadow">
       <Navbar bg="light" variant="light">
@@ -12,7 +14,18 @@ const Header = () => {
           <Nav className="ms-auto">
             <Link to="/home">Home</Link>
             <Link to="/features">Features</Link>
-            <Link to="/login">Login</Link>
+            <Link to="/about">About</Link>
+            <Link to="/register">Register</Link>
+            <span style={{ fontWeight: "bold" }}>
+              {user?.displayName && user.displayName}
+            </span>
+            {user?.uid ? (
+              <Button onClick={handleSignOut} className="signout-btn">
+                Sign Out
+              </Button>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
           </Nav>
         </Container>
       </Navbar>
